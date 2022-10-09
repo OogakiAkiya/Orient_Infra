@@ -5,6 +5,13 @@ provider "aws"{
 
 terraform {
    required_version = "= 1.2.9"
+   /*
+   backend "s3" {
+    backet = "bucketName"
+    key    = "terraform/terraform.tfstate"
+    region = "ap-northeast-1"
+   }
+   */
 }
 
 //data

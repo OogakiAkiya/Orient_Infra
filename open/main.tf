@@ -5,6 +5,13 @@ provider "aws"{
 
 terraform {
    required_version = "= 1.2.9"
+   /*
+   backend "s3" {
+    backet = "bucketName"
+    key    = "terraform/open/terraform.tfstate"      //環境ごとのディレクトリを作成する
+    region = "ap-northeast-1"
+   }
+   */
 }
 
 //data
