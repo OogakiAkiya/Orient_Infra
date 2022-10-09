@@ -1,10 +1,10 @@
 //Open public Gameserver inbound Security Group
-resource "aws_security_group" "open_public_game" {
+resource "aws_security_group" "open_public_orient_inbound" {
   vpc_id = data.aws_vpc.open_vpc.id
-  name   = "open-public-game"
+  name   = "open-public-orient_inbound"
 
   tags = {
-    Name = "open-public-game"
+    Name = "open-public-orient_inbound"
   }
 }
 
@@ -20,7 +20,7 @@ resource "aws_security_group" "open_public_outboud" {
 
 #ゲームサーバー用のインバウンド作成
 resource "aws_security_group_rule" "open_public_inbound_tcp_17600" {
-  security_group_id = aws_security_group.open_public_game.id
+  security_group_id = aws_security_group.open_public_orient_inbound.id
   type              = "ingress"
   cidr_blocks       = ["0.0.0.0/0"]
   from_port         = 17600
@@ -29,7 +29,7 @@ resource "aws_security_group_rule" "open_public_inbound_tcp_17600" {
 }
 
 resource "aws_security_group_rule" "open_public_inbound_udp_17700" {
-  security_group_id = aws_security_group.open_public_game.id
+  security_group_id = aws_security_group.open_public_orient_inbound.id
   type              = "ingress"
   cidr_blocks       = ["0.0.0.0/0"]
   from_port         = 17700

@@ -5,7 +5,7 @@ resource "aws_instance" "game1001" {
     ami                    = "ami-078296f82eb463377"
     instance_type          = "t3.nano"
     subnet_id              = data.aws_subnet.open_public_1a.id
-    vpc_security_group_ids = [ aws_security_group.open_public_outboud.id,aws_security_group.open_public_game.id ]
+    vpc_security_group_ids = [ aws_security_group.open_public_outboud.id,aws_security_group.open_public_orient_inbound.id ]
     iam_instance_profile   =  "BaseInstanceRole"
     key_name               = null 
     tags = {
